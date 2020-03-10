@@ -66,10 +66,6 @@ finally:
 - 我选择打印出a和b的值，但根据我们之前的情况，a的值在第一个try中被初始化为1，而b的初始化实际上是没有进行的。所以这里再用一个try去捕获异常（NameError），被捕获到以后我们在最后的finally语句中打印出b的值1。
 - 最后这句print是为了检测另外一种情况：假设我们将Line 16的NameError换成别的异常检测，比如ValueError，即我们的异常捕获是没有成功的，但实际发生了异常。那么程序会终止，但终止前仍然会去运行finally语句中的代码块。但后面的语句就不会再执行了。
 
-##### 测试程序OUTPUT：
-
-![img](file:///C:\Users\wwwxi\AppData\Roaming\Tencent\Users\123466188\QQ\WinTemp\RichOle\Q[W{SATJ8UXPUFKAU[4QAZH.png) 
-
 #### 用户自定义异常
 
 此外还有用户自定义异常。这部分代码我Copy了另一位博主的，很好理解。供大家参考：
@@ -81,17 +77,4 @@ finally:
 ##### 代码：
 
 见`User_define_exception.py`
-
-```python
-class MyError(Exception):
-    def __init__(self, msg):
-        self.msg = msg
-
-    
-try:
-    raise MyError('类型错误')
-except MyError as e:
-    print('My exception occurred', e.msg)
-#  OUTPUT: My exception occurred 类型错误
-```
 
