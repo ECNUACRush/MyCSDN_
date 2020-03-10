@@ -3,7 +3,7 @@ S = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 # m进制ton进制 (m进制到10进制，10进制到n进制）
 """
-    Function Declaration 函数介绍:
+    function declaration:
     :mhex_to_dec(m, origin): m进制到10进制
     :dec_to_nhex(n, origin): 10进制到n进制
     :mhex_to_nhex(m, n, origin): m进制到n进制
@@ -53,4 +53,6 @@ def mhex_to_nhex(origin, m, n):
 if __name__ == '__main__':
     mm, nn = map(int, input().split())  # 在同一行输入当前进制，目标进制
     num_str = input()  # 在第二行输入当前进制下的数
-    print(mhex_to_nhex(num_str, mm, nn))
+    print(mhex_to_nhex(num_str, mm, nn)) if num_str[0] != '-' else print('-'+mhex_to_nhex(num_str[1::], mm, nn))
+
+
