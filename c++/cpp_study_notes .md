@@ -1,6 +1,4 @@
----
-
----
+# 					  CPP LEARNING NOTES
 
 #### 定义字符数组：用char和string  分别定义如下形式的：
 
