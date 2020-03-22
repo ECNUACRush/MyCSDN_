@@ -1,5 +1,20 @@
 # 					  CPP LEARNING NOTES
 
+### 杂记：
+
+##### 加速IO：
+
+`ios::sync_with_stdio(0);
+    cin.tie(0);`
+
+##### 去除cin之后的回车
+
+1.`getchar()`
+
+2.`(cin >> t).get()`
+
+
+
 #### 定义字符数组：用char和string  分别定义如下形式的：
 
 `//char *Day[] = {"MON","TUE","WED","THU","FRI","SAT","SUN"};
@@ -199,6 +214,49 @@ note：注意由于第二个类型是string，也即插入的只能是“xxx”�
     cout << a;`
 
 //answer：ahellaobcdefghi
+
+#### 字符串大小写转换 & 字符转换 （四种方法，transform）
+
+```cpp
+void to_upper(std::string &str) //注意用指针的话传参就要用&了，不然没法修改实际字符串
+{
+    for(std::string::iterator it = str.begin(); it != str.end(); it++)
+        *it = toupper(*it);
+}
+
+void to_lower(std::string &str)
+{
+    for(std::string::iterator it = str.begin(); it != str.end(); it++)
+        *it = tolower(*it);
+}
+int main()
+{
+    string s1 = "nancy Nancy NbaanBcyY";
+    string s2 = "abcdefgHIJKLMN";
+    string s3 = "ABCDEFGhijklmn";
+    string s4 = "hz with nancy NANCY WITH HZ";
+    // Solution1：
+    transform(s1.begin(), s1.end(), s1.begin(), ::tolower); // head file <algorithm>
+    // transform(first,last,result,op);//first是容器的首迭代器，last为容器的末迭代器，result为存放结果的容器，op为要进行操作的一元函数对象或sturct、class
+    // 注意：第三个参数如果是另一个容器，存的仍然是s1经过操作后的字符串，但是可能会因为result不够大而溢出。
+    
+    // Solution2：
+    for(auto it = s2.begin(); it != s2.end(); ++it)
+        *it = tolower(*it);
+    // Solution3：
+    to_upper(s3);
+    // Solution4：
+    for(auto &i : s4) // 每次修改单个字母
+        i = toupper(i);
+    cout << s1 << endl;
+    cout << s2 << endl;
+    cout << s3 << endl;
+    cout << s4 << endl;
+    return 0;
+}
+```
+
+
 
 #### 关于四舍五入处理，以及double类型输出：
 
