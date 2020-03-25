@@ -66,7 +66,7 @@ case #2:
 
 4. 写了一种情况如下图：帮助理解。
 
-   <img src="C:\Users\wwwxi\AppData\Roaming\Typora\typora-user-images\image-20200324234623479.png" alt="image-20200324234623479" style="zoom: 33%;" />
+   <img src="C:\Users\wwwxi\Desktop\image-20200324234623479.png" alt="image-20200324234623479" style="zoom:33%;" />
 
    - 第一行的in为单词，第二行的in in a int in则是待搜索串。中间的‘-’代表一个或多个空格。
    - 分别考虑1.2.3三种情况，分别对应开头、中间、尾部三种情况。对于2我画了两种分别是匹配成功和匹配失败的情况。对于1.3严格来说也有两种，不过情况类似就不赘述了。
