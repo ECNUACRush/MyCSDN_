@@ -40,6 +40,7 @@ int main()
     for (i = 1; i <= 100; ++i) // 固定队头出队，删除100个。
         ListDelete(L, 1, DeleteRecv);
     cout << "After Delete, L.length is: " << L.length << endl;
+    cout << "Del : " << DeleteRecv << endl;
     for (i = 0; i < 5; ++i)
         cout << L.data[i] << endl;
     cout << "operation 3: Locate, Notice this is also position" << endl;
@@ -65,7 +66,7 @@ bool ListInsert(SqList& L, int i, int e) // i:位置
     L.length++;
     return true;
 }
-bool ListDelete(SqList& L, int i, int& e)
+bool ListDelete(SqList& L, int i, int &e)
 { // valid i : [1, L.Length]
   // index : [0, L.Length - 1], i = index + 1;
     if (i < 1 || i > L.length)
