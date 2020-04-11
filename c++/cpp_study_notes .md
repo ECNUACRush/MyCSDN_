@@ -20,7 +20,7 @@
 `//char *Day[] = {"MON","TUE","WED","THU","FRI","SAT","SUN"};
 	string Day[] = {"MON","TUE","WED","THU","FRI","SAT","SUN"}`
 
-`string Day[7] = {"MON","TUE","WED","THU","FRI","SAT","SUN"};`;`
+`string Day[7] = {"MON","TUE","WED","THU","FRI","SAT","SUN"};`;
 
 那么使用的时候，可以直接用Day[0]来替代“MON”。
 
